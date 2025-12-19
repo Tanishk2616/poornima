@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Poornima 🍦💗</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  background:linear-gradient(135deg,#ffe4e6,#fde68a,#e9d5ff,#dbeafe);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Segoe UI',sans-serif;
+  overflow:hidden;
+}
+
+/* floating softy */
+.softy{
+  position:absolute;
+  font-size:22px;
+  animation:float 6s linear infinite;
+  opacity:0.9;
+}
+@keyframes float{
+  0%{transform:translateY(100vh) scale(0.6);opacity:0}
+  20%{opacity:1}
+  100%{transform:translateY(-10vh) scale(1.2);opacity:0}
+}
+
+/* card */
+.card{
+  background:#fff;
+  width:360px;
+  padding:30px 28px;
+  border-radius:30px;
+  text-align:center;
+  box-shadow:0 20px 40px rgba(0,0,0,0.15);
+  animation:cardIn 1.2s ease;
+}
+@keyframes cardIn{
+  from{opacity:0; transform:scale(0.75) translateY(40px)}
+  to{opacity:1; transform:scale(1) translateY(0)}
+}
+
+/* photo */
+.photo{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid #fb7185;
+  box-shadow:0 0 20px rgba(251,113,133,0.6);
+  animation:photoPop 2s infinite;
+}
+@keyframes photoPop{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.06)}
+  100%{transform:scale(1)}
+}
+
+h2{
+  color:#fb7185;
+  margin:12px 0 0;
+  animation:bounce 1.6s infinite;
+}
+@keyframes bounce{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+}
+
+p{
+  color:#475569;
+  font-size:14.6px;
+  line-height:1.8;
+  margin-top:14px;
+}
+
+.code{
+  margin:18px 0;
+  padding:14px;
+  background:#fff1f2;
+  border-radius:18px;
+  font-family:monospace;
+  color:#ec4899;
+  font-size:13.2px;
+  animation:wobble 2.8s infinite;
+}
+@keyframes wobble{
+  0%{transform:rotate(0deg)}
+  25%{transform:rotate(1deg)}
+  75%{transform:rotate(-1deg)}
+  100%{transform:rotate(0deg)}
+}
+
+#typing{
+  color:#fb7185;
+  font-weight:600;
+  margin-top:14px;
+  min-height:22px;
+}
+
+.buttons{
+  display:flex;
+  justify-content:space-around;
+  margin-top:16px;
+}
+.btn{
+  border:none;
+  padding:10px 18px;
+  border-radius:22px;
+  font-size:14px;
+  cursor:pointer;
+  transition:0.3s;
+}
+.yes{background:#fb7185;color:white}
+.yes:hover{transform:scale(1.1)}
+.maybe{background:#e5e7eb;color:#475569}
+.maybe:hover{transform:scale(1.05)}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <!-- PHOTO -->
+  <img src="poornima.jpeg" alt="Poornima" class="photo">
+
+  <h2>Poornima 🍦💗</h2>
+
+  <p>
+    10 months of talking 🤍  
+    and you slowly became my comfort.
+  </p>
+
+  <p>
+    That softy day 🍦  
+    turned me into your  
+    <b style="color:#fb7185;">softy paglu</b> 🥹
+  </p>
+
+  <div class="code">
+    fav_person = "Poornima" 💕<br>
+    role = "softy paglu" 🍦<br>
+    if softy_available:<br>
+    &nbsp;&nbsp;think_of(Poornima) 🥺<br><br>
+
+    if(life.with(Poornima)) { happiness++; } ❤️
+  </div>
+
+  <p>
+    No pressure…  
+    just a softy paglu being honest 🤍
+  </p>
+
+  <div id="typing"></div>
+
+  <div class="buttons">
+    <button class="btn yes" onclick="yesClick()">Yes 🥰</button>
+    <button class="btn maybe" onclick="maybeClick()">Maybe 🙂</button>
+  </div>
+
+</div>
+
+<script>
+/* typing effect */
+const text = "Poornima… will you let this softy paglu be more than a best friend? 🍦🥹";
+let i = 0;
+function typeText(){
+  if(i < text.length){
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeText, 65);
+  }
+}
+typeText();
+
+/* floating softy */
+setInterval(()=>{
+  const s = document.createElement("div");
+  s.className = "softy";
+  s.innerHTML = "🍦";
+  s.style.left = Math.random()*100 + "vw";
+  s.style.animationDuration = (4+Math.random()*3)+"s";
+  document.body.appendChild(s);
+  setTimeout(()=>s.remove(),7000);
+},500);
+
+
+function yesClick(){
+  alert("Yayyy 🍦💖 Your softy paglu is the happiest today!");
+}
+function maybeClick(){
+  alert("No worries 🤍 This softy paglu will wait 🍦");
+}
+</script>
+
+</body>
+</html>
